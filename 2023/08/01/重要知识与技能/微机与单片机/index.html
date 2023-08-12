@@ -123,8 +123,50 @@
 <li>1个全双工串行口</li>
 <li>5个中断源</li>
 <li>累加器Acc是8位寄存器</li>
-<li>PSW是一个8位的特殊功能寄存器，存放状态信息，包括进位信息C，半进位标志位AC，RS1和RS0是选择当前工作的寄存器，ov是溢出标志位，p奇偶校验位，奇数个1为1<br><a class="simple-lightbox" href="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E5%8D%95%E7%89%87%E6%9C%BA%E5%BC%95%E8%84%9A.png"><img   src="/images/loading.svg" data-src="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E5%8D%95%E7%89%87%E6%9C%BA%E5%BC%95%E8%84%9A.png"  alt="单片机引脚" lazyload></a></li>
+<li>PSW是一个8位的特殊功能寄存器，存放状态信息，包括进位信息C，半进位标志位AC，RS1和RS0是选择当前工作的寄存器，ov是溢出标志位，p奇偶校验位，奇数个1为1</li>
 </ul>
+<p>PSW状态字</p>
+<table>
+<thead>
+<tr>
+<th>8个状态字</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CY</td>
+<td>进位标志位，最高位进位或借位置一</td>
+</tr>
+<tr>
+<td>AC</td>
+<td>半进位标志位，第四位进位或借位置一</td>
+</tr>
+<tr>
+<td>F0</td>
+<td>用户标志位</td>
+</tr>
+<tr>
+<td>RS1</td>
+<td>选择寄存器组</td>
+</tr>
+<tr>
+<td>RS0</td>
+<td>选择寄存器组</td>
+</tr>
+<tr>
+<td>OV</td>
+<td>溢出标志位</td>
+</tr>
+<tr>
+<td>F1</td>
+<td>保留位，不用</td>
+</tr>
+<tr>
+<td>P</td>
+<td>奇偶校验位，奇数个1为1</td>
+</tr>
+</tbody></table>
+<p><a class="simple-lightbox" href="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E5%8D%95%E7%89%87%E6%9C%BA%E5%BC%95%E8%84%9A.png"><img   src="/images/loading.svg" data-src="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E5%8D%95%E7%89%87%E6%9C%BA%E5%BC%95%E8%84%9A.png"  alt="单片机引脚" lazyload></a></p>
 <p>五个中断源</p>
 <table>
 <thead>
@@ -418,10 +460,24 @@
 </tr>
 </tbody></table>
 <p>1.寄存器寻址<br>寻址范围包括：<br>通用寄存器R0~R7<br>特殊功能寄存器A、B、DPTR<br>例如 MOV A,R0;<br>2.直接寻址<br>直接给出操作数的地址<br>直接地址可以是特殊功能寄存器和内部RAM低128字节<br>例如  MOV A,30H;<br>3.寄存器间接寻址<br>能用于间接寻址的有：R0,R1,DPTR,SP<br>寻址范围：<br>（1）内部RAM低128个单元，通用形式为@Ri<br>（2）对片外数据存储器的64K字节间接寻址<br>（3）堆栈区：堆栈指令PUSH和POP用SP作为简介地址寄存器<br>4.立即寻址<br>有8位和16位<br>用#表示<br>eg:MOV A,#0FH;<br>5.变址寻址<br>地址为：PC或DPTR+A<br>只能对程序存储器ROM的数据进行操作，64KB，通常用于查表操作<br>MOVC A,@A+DPTR;<br>MOVC A,@A+PC;<br>JMP @A+DPTR;跳转<br>6.相对寻址<br>SJMP rel<br>地址偏移量用rel表示，rel是1个有符号的8位二进制补码，范围是-128~127<br>转移的目的地址&#x3D;转移指令地址+转移指令字节数+rel<br>程序存储器<br>7.位寻址<br>寻址范围：<br>（1）内部RAM的位寻址区<br>（2）特殊功能寄存器的可寻址位<br>eg：<br>SETB 20H;<br>MOV 32H,C;</p>
+<h3 id="数据传送与交换指令"><a href="#数据传送与交换指令" class="headerlink" title="数据传送与交换指令"></a>数据传送与交换指令</h3><p>操作码&lt;目的操作数&gt;，&lt;源操作数&gt;<br>MOV 片内RAM<br>MOVX 片外RAM<br>MOVC ROM<br>源操作数不变，目的操作数变成源操作数<br><a class="simple-lightbox" href="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E7%89%87%E5%86%85MOV%E8%BD%AC%E7%A7%BB.png"><img   src="/images/loading.svg" data-src="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E7%89%87%E5%86%85MOV%E8%BD%AC%E7%A7%BB.png"  alt="片内MOV转移" lazyload></a><br>别人都可以传给A<br>除了RnRi都可以传给Rn<br>直接地址全都可以传给自己，包括自己<br>立即数都不能传给自己，但都可以传给别人<br>建议记住画法</p>
+<p>MOVX 的所有指令(与外部RAM进行数据交换)<br>MOVX A,@Ri;<br>MOVX @Ri，A;<br>MOVX A,@DPTR;<br>MOVX @DPTR,A;</p>
+<p>MOVC 查表指令，只能读取程序存储器，不能写<br>MOVC A，@A+DPTR;<br>MOVC A,@A+PC;</p>
+<p>字节交换指令<br>XCH A,Rn;<br>XCH A,dir;<br>XCH A,@Ri;<br>低半字节交换<br>XCHD A,@Ri;A是八位的，交换低八位<br>SWAP A;自己的高四位和低四位交换</p>
+<p>堆栈指令<br>用于保护程序断点和数据<br>PUSH dir;SP加一，(dir)→(SP)<br>POP dir;(SP)→(dir),SP减一<br>用于保护现场和回复现场</p>
+<p>不带进位加法指令<br>ADD A,#data;A+data→A<br>ADD A,direct;A+(direct)→A<br>ADD A,Rn;A+Rn→A<br>ADD A,@Ri;A+(Ri)→A<br>如果位3有进位（位0到位7）<br>PSW里面的半进位标志AC置一，反之清零<br>如果位七有进位<br>PSW里面的进位标志CY置一，反之清零<br>如果两个有符号数在加减法时，只有低六位或者第七位发生进位或借位，则OV&#x3D;1</p>
+<p>带进位的加法指令<br>ADDC A,#data;A+data+CY→A<br>ADDC A,direct;A+(direct)+CY→A<br>ADDC A,Rn;A+Rn+CY→A<br>ADDC A,@Ri;A+(Ri)+CY→A</p>
+<p>加一指令<br>INC A;<br>INC Rn;<br>INC direct;<br>INC @Ri;<br>INC DPTR;<br>说明：INC A只影响P（奇偶标志位）不影响其他的</p>
+<p>例题：<br><a class="simple-lightbox" href="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E4%BE%8B%E9%A2%98%E5%8A%A0%E6%B3%95.png"><img   src="/images/loading.svg" data-src="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E4%BE%8B%E9%A2%98%E5%8A%A0%E6%B3%95.png"  alt="例题" lazyload></a></p>
+<p>带借位的减法指令<br>SUBB A,#data;A-data-CY→A<br>SUBB A,direct;A-(direct)-CY→A<br>SUBB A,Rn;A-Rn-CY→A<br>SUBB A,@Ri;A-(Ri)-CY→A<br>如果位3有借位（位0到位7）<br>PSW里面的半进位标志AC置一，反之清零<br>如果位七有借位<br>PSW里面的进位标志CY置一，反之清零<br>如果两个有符号数在加减法时，只有低六位或者第七位发生进位或借位，则OV&#x3D;1</p>
+<p>减一指令<br>DEC A;<br>DEC Rn;<br>DEC direct;<br>DEC @Ri;<br>只影响p</p>
+<p>十进制调整指令<br>进位或半进位标志为一，则A＋06H或60H<br>DA A;</p>
+<p>乘法指令<br>MUL AB;A*B的结果放在BA中，B为高字节,A存低字节<br>若乘机大于255即一个字节，则OV&#x3D;1</p>
+<p>除法指令<br>DIV AB;A&#x2F;B&#x3D;A…B商存在A,余数存在B</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
         </div>
         <div class="top-div">
-          <ol class="top-box"><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E4%B8%80%E3%80%81%E7%BB%AA%E8%AE%BA"><span class="top-box-text">一、绪论</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E4%BA%8C%E3%80%81%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E7%BB%93%E6%9E%84"><span class="top-box-text">二、微型计算机组成与结构</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E4%B8%89%E3%80%81%E5%8D%95%E7%89%87%E6%9C%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F"><span class="top-box-text">三、单片机汇编语言指令系统</span></a></li></ol>
+          <ol class="top-box"><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E4%B8%80%E3%80%81%E7%BB%AA%E8%AE%BA"><span class="top-box-text">一、绪论</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E4%BA%8C%E3%80%81%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E7%BB%93%E6%9E%84"><span class="top-box-text">二、微型计算机组成与结构</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E4%B8%89%E3%80%81%E5%8D%95%E7%89%87%E6%9C%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F"><span class="top-box-text">三、单片机汇编语言指令系统</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81%E4%B8%8E%E4%BA%A4%E6%8D%A2%E6%8C%87%E4%BB%A4"><span class="top-box-text">数据传送与交换指令</span></a></li></ol>
         </div>
       </div>
     </div>
