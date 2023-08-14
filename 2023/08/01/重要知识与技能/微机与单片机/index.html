@@ -124,9 +124,7 @@
 <li>5个中断源</li>
 <li>累加器Acc是8位寄存器</li>
 <li>PSW是一个8位的特殊功能寄存器，存放状态信息，包括进位信息C，半进位标志位AC，RS1和RS0是选择当前工作的寄存器，ov是溢出标志位，p奇偶校验位，奇数个1为1</li>
-</ul>
-<p>PSW状态字</p>
-<table>
+<li><strong>一个字节是8位二进制数，每个地址单元只能存1个字节</strong><br>PSW状态字<table>
 <thead>
 <tr>
 <th>8个状态字</th>
@@ -166,6 +164,8 @@
 <td>奇偶校验位，奇数个1为1</td>
 </tr>
 </tbody></table>
+</li>
+</ul>
 <p><a class="simple-lightbox" href="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E5%8D%95%E7%89%87%E6%9C%BA%E5%BC%95%E8%84%9A.png"><img   src="/images/loading.svg" data-src="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E5%8D%95%E7%89%87%E6%9C%BA%E5%BC%95%E8%84%9A.png"  alt="单片机引脚" lazyload></a></p>
 <p>五个中断源</p>
 <table>
@@ -474,6 +474,34 @@
 <p>十进制调整指令<br>进位或半进位标志为一，则A＋06H或60H<br>DA A;</p>
 <p>乘法指令<br>MUL AB;A*B的结果放在BA中，B为高字节,A存低字节<br>若乘机大于255即一个字节，则OV&#x3D;1</p>
 <p>除法指令<br>DIV AB;A&#x2F;B&#x3D;A…B商存在A,余数存在B</p>
+<p>逻辑与ANL<br>ANL A,Rn;<br>ANL A,direct;<br>ANL A,@Ri;<br>ANL A,#data;<br>ANL direct,A;<br>ANL direct,#data;<br>先转换成二进制再按位计算<br>结果存放入目的地址<br>逻辑或XRL<br>逻辑异或ORL<br>逻辑与用于清零<br>逻辑或用于置1<br>逻辑异或用于取反（与1异或取反）</p>
+<p>清零<br>CLR A;</p>
+<p>按位取反<br>CPL A;</p>
+<p>循环左移<br>RL A;先转换成二进制</p>
+<p>循环右移<br>RR A;</p>
+<p>带进位的左移<br>RLC A;</p>
+<p>带进位的右移<br>RRC A;</p>
+<p>控制转移类指令</p>
+<p>绝对转移指令<br>AJMP addr11;范围是2kb<br>长转移指令<br>LJMP addr16;范围64kb<br>短转移指令<br>SJMP rel;<br>变址寻址转移指令<br>JMP @A+DPTR;</p>
+<p>条件转移指令<br>JZ rel;A为零则转移，不为零顺序跳转<br>JNZ rel;不为零跳转</p>
+<p>比较不相等转移<br>CJNE A,direct,rel;<br>CJNE A,#data,rel;<br>CJNE Rn,#data,rel;<br>CJNE @Ri,#data,rel;</p>
+<p><a class="simple-lightbox" href="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E4%BC%A0%E9%80%81%E6%95%B0%E6%8D%AE%E5%B9%B6%E5%88%A4%E6%96%AD%E4%BE%8B%E9%A2%98.png"><img   src="/images/loading.svg" data-src="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E4%BC%A0%E9%80%81%E6%95%B0%E6%8D%AE%E5%B9%B6%E5%88%A4%E6%96%AD%E4%BE%8B%E9%A2%98.png"  alt="例题" lazyload></a></p>
+<p>减一不为零跳转</p>
+<p>DJNZ Rn,rel;<br>DJNZ direct,rel;<br>相当于计数器</p>
+<p><a class="simple-lightbox" href="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E7%89%87%E5%A4%96%E6%B8%85%E9%9B%B6%E6%93%8D%E4%BD%9C.png"><img   src="/images/loading.svg" data-src="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E7%89%87%E5%A4%96%E6%B8%85%E9%9B%B6%E6%93%8D%E4%BD%9C.png"  alt="例题" lazyload></a></p>
+<p>子程序调用<br>调用指令和返回指令在子程序成对出现<br>调用子程序指令，会自动进行入栈和出栈操作，进行现场保护<br>短调用指令<br>ACALL addr11;2KB<br>长调用指令<br>LCALL addr16;64KB<br>返回指令<br>RET;子程序返回<br>RETI;中断程序返回</p>
+<p>NOP;空操作指令，用于测试或者延时</p>
+<p>位传送指令<br>MOV C,bit;<br>MOV bit,C;<br>例如<br>MOV P1.0,C;</p>
+<p>位置一，位清零<br>SETB C;<br>SETB bit;<br>CLR C;<br>CLR bit;<br>例如<br>SETB P1.2;<br>CLR P3.3;<br>位与指令<br>ANL C,bit;<br>ANL C,&#x2F;bit;将bit取反后再和C相与，存入C<br>位或指令<br>ORL C，bit;<br>ORL C,&#x2F;bit;<br>位取反指令<br>CPL C;<br>位控制转移指令<br>JC rel;CY&#x3D;1 转移<br>JNC rel; CY&#x3D;0 转移<br>JB rel;<br>JNB rel;if bit&#x3D;0 jump<br>JBC bit,rel;if bit&#x3D;1 jump and bit clear to 0</p>
+<p>Program Design<br>伪指令(编写程序要用，生成的汇编程序中没有)<br>ORG 16位地址<br>程序开始规定起始地址，一般是0030H开始，如果不规定就是0000H</p>
+<p>END 汇编结束指令，整个源程序只能有一条END;</p>
+<p>EQU 标号赋值伪指令<br>字符名称 EQU 赋值项<br>例如：<br>TEMP EQU 20H;<br>则之后的TEMP都可以用20H代替</p>
+<p>DB从指定的地址开始，在程序存储器的连续单元定义数据<br>DB 8位数表<br>可以是一个字节常数或者字符或者字节串和字符串<br>例如<br>DB 30H,40H,21,10</p>
+<p>定义字伪指令<br>DW 16位数表<br>例如<br>ORG 1000H<br>DW 1234H,55H,9876H<br>每个地址单元存两位，如1000&#x3D;12H,1001H&#x3D;34H,1002H&#x3D;00H,1003H&#x3D;55H…</p>
+<p>定义存储区<br>从指定地址开始，保留指定个字节单元作为存储区<br>DS 表达式<br>例如<br>ORG 3000H<br>TAB:DS 08H</p>
+<p>BIT位地址赋给名称<br>例如<br>P10 BIT P1.0<br>用P1.0代替P10<br><a class="simple-lightbox" href="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E6%AF%94%E8%BE%83%E5%A4%A7%E5%B0%8F%E4%BE%8B%E9%A2%98.png"><img   src="/images/loading.svg" data-src="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E6%AF%94%E8%BE%83%E5%A4%A7%E5%B0%8F%E4%BE%8B%E9%A2%98.png"  alt="例题" lazyload></a><br><a class="simple-lightbox" href="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E5%A4%9A%E5%88%86%E6%94%AF%E6%AF%94%E8%BE%83%E5%A4%A7%E5%B0%8F%E4%BE%8B%E9%A2%98.png"><img   src="/images/loading.svg" data-src="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E5%A4%9A%E5%88%86%E6%94%AF%E6%AF%94%E8%BE%83%E5%A4%A7%E5%B0%8F%E4%BE%8B%E9%A2%98.png"  alt="例题" lazyload></a></p>
+<p>循环结构<br>要先初始化，然后进行计算，还要有个循环计数器<br><a class="simple-lightbox" href="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E5%BE%AA%E7%8E%AF%E8%AE%A1%E7%AE%97%E4%BE%8B%E9%A2%98.png"><img   src="/images/loading.svg" data-src="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E5%BE%AA%E7%8E%AF%E8%AE%A1%E7%AE%97%E4%BE%8B%E9%A2%98.png"  alt="例题" lazyload></a></p>
+<p><a class="simple-lightbox" href="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E5%88%A9%E7%94%A8%E5%AD%90%E7%A8%8B%E5%BA%8F%E8%AE%A1%E7%AE%97%E4%BE%8B%E9%A2%981_1.png"><img   src="/images/loading.svg" data-src="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E5%88%A9%E7%94%A8%E5%AD%90%E7%A8%8B%E5%BA%8F%E8%AE%A1%E7%AE%97%E4%BE%8B%E9%A2%981_1.png"  alt="例题" lazyload></a><br><a class="simple-lightbox" href="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E5%88%A9%E7%94%A8%E5%AD%90%E7%A8%8B%E5%BA%8F%E8%AE%A1%E7%AE%97%E4%BE%8B%E9%A2%981_2.png"><img   src="/images/loading.svg" data-src="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E5%88%A9%E7%94%A8%E5%AD%90%E7%A8%8B%E5%BA%8F%E8%AE%A1%E7%AE%97%E4%BE%8B%E9%A2%981_2.png"  alt="例题" lazyload></a></p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
         </div>
         <div class="top-div">
