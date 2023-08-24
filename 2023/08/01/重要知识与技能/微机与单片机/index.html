@@ -843,7 +843,9 @@
 <p>RI：串行接收中断标志。<br>在串行口允许接收时，每接收完一个串行帧数据，<br>硬件将使RI置位。同样，CPU在响应中断时不会<br>清除RI，必须在中断服务程序中由软件清除。</p>
 <p>中断服务入口地址设置一条跳转指令,转移到<br>中断服务程序的实际入口地址。 最好用LJMP指令，<br>这样很方便地将中断服务程序不受限制的安排在64K<br>B任何地方。因为51单片机的5个中断源的中断服务程序入口地址太接近，就8个单元的空，一般的中断程序放不下，所以编程时把中断服务程序放在较远的容量足够大的地方</p>
 <p>9.访问外扩展的数据存储器，要由P2口提供高8位地址，P0<br>口提供低8位地址和8位双向数据总线</p>
-<p>10.存储类型<br><a class="simple-lightbox" href="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%B1%BB%E5%9E%8B.png"><img   src="/images/loading.svg" data-src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%B1%BB%E5%9E%8B.png"  alt="存储类型" lazyload></a><br>函数类型 函数名（形式参数表） interrupt n using n<br>关键字interrupt是中断号，对于51单片机，n取值为<br>0~4。<br>关键字using后的 n是所选择的寄存器组，using是一个<br>选项，可省略</p>
+<p>10.存储类型</p>
+<p><a class="simple-lightbox" href="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%B1%BB%E5%9E%8B.png"><img   src="/images/loading.svg" data-src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%B1%BB%E5%9E%8B.png"  alt="存储类型" lazyload></a></p>
+<p>函数类型 函数名（形式参数表） interrupt n using n<br>关键字interrupt是中断号，对于51单片机，n取值为<br>0~4。<br>关键字using后的 n是所选择的寄存器组，using是一个<br>选项，可省略</p>
 <p>11<br>C51语言的强大功能及其高效率在于提供了丰富的可直<br>接调用的库函数。库函数可以使程序代码简单、结构清晰、<br>易于调试和维护。</p>
 <p>下面介绍几类重要的库函数。<br>特殊功能寄存器包含文件reg51.h或reg52.h。<br>reg51.h中包含所有的8051的sfr及其位定义。<br>reg52.h中包含所有8052的sfr及其位定义，一般系统<br>都包含reg51.h或reg52.h。</p>
 <p>绝对地址包含文件absacc.h：该文件定义了几个宏，<br>以确定各类存储空间的绝对地址。</p>
