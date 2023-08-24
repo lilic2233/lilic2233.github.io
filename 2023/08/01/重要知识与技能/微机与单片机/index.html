@@ -11,18 +11,20 @@
 
 <title>微机与单片机</title>
 <meta name="keywords" content="微机与单片机, Lilic的博客">
-<meta name="description" content="一、绪论
+<meta name="description" content="目录
+01绪论02微型计算机组成与结构03单片机汇编语言指令系统04数据传送与交换指令05中断服务06定时&#x2F;计数器07单片机串行通信08考题
+一、绪论
 冯·诺依曼计算机由运算、控制、储存、输入、输出五个部件构成
-第四代电子计算机以微处理器（MPU）为核心
-单片机由中央处理器CPU、储存器RAM、ROM、并行I&#x2F;O、串行I&#x2F;O、定时器&#x2F;计数器、中断系统">
+第四代电子计算机以">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:title" content="微机与单片机">
-<meta property="og:description" content="一、绪论
+<meta property="og:description" content="目录
+01绪论02微型计算机组成与结构03单片机汇编语言指令系统04数据传送与交换指令05中断服务06定时&#x2F;计数器07单片机串行通信08考题
+一、绪论
 冯·诺依曼计算机由运算、控制、储存、输入、输出五个部件构成
-第四代电子计算机以微处理器（MPU）为核心
-单片机由中央处理器CPU、储存器RAM、ROM、并行I&#x2F;O、串行I&#x2F;O、定时器&#x2F;计数器、中断系统">
+第四代电子计算机以">
 
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="stylesheet" href="/style/main.css">
@@ -95,7 +97,9 @@
       </div>
       <div class="post-content-wrapper">
         <div class="post-content">
-          <h3 id="一、绪论"><a href="#一、绪论" class="headerlink" title="一、绪论"></a>一、绪论</h3><ul>
+          <p><span style=" color: red;"><strong>目录</strong></span></p>
+<p><a href="#%E4%B8%80%E3%80%81%E7%BB%AA%E8%AE%BA">01绪论</a><br><a href="#%E4%BA%8C%E3%80%81%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E7%BB%93%E6%9E%84">02微型计算机组成与结构</a><br><a href="#%E4%B8%89%E3%80%81%E5%8D%95%E7%89%87%E6%9C%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F">03单片机汇编语言指令系统</a><br><a href="#%E5%9B%9B%E3%80%81%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81%E4%B8%8E%E4%BA%A4%E6%8D%A2%E6%8C%87%E4%BB%A4">04数据传送与交换指令</a><br><a href="#%E4%BA%94%E3%80%81%E4%B8%AD%E6%96%AD%E6%9C%8D%E5%8A%A1">05中断服务</a><br><a href="#%E5%85%AD%E3%80%81%E5%AE%9A%E6%97%B6/%E8%AE%A1%E6%95%B0%E5%99%A8">06定时&#x2F;计数器</a><br><a href="#%E4%B8%83%E3%80%81%E5%8D%95%E7%89%87%E6%9C%BA%E4%B8%B2%E8%A1%8C%E9%80%9A%E4%BF%A1">07单片机串行通信</a><br><a href="#%E5%85%AB%E3%80%81%E8%80%83%E9%A2%98">08考题</a></p>
+<h3 id="一、绪论"><a href="#一、绪论" class="headerlink" title="一、绪论"></a>一、绪论</h3><ul>
 <li>冯·诺依曼计算机由运算、控制、储存、输入、输出五个部件构成</li>
 <li>第四代电子计算机以微处理器（MPU）为核心</li>
 <li>单片机由中央处理器CPU、储存器RAM、ROM、并行I&#x2F;O、串行I&#x2F;O、定时器&#x2F;计数器、中断系统、系统时钟电路和总线8个构成</li>
@@ -460,7 +464,7 @@
 </tr>
 </tbody></table>
 <p>1.寄存器寻址<br>寻址范围包括：<br>通用寄存器R0~R7<br>特殊功能寄存器A、B、DPTR<br>例如 MOV A,R0;<br>2.直接寻址<br>直接给出操作数的地址<br>直接地址可以是特殊功能寄存器和内部RAM低128字节<br>例如  MOV A,30H;<br>3.寄存器间接寻址<br>能用于间接寻址的有：R0,R1,DPTR,SP<br>寻址范围：<br>（1）内部RAM低128个单元，通用形式为@Ri<br>（2）对片外数据存储器的64K字节间接寻址<br>（3）堆栈区：堆栈指令PUSH和POP用SP作为简介地址寄存器<br>4.立即寻址<br>有8位和16位<br>用#表示<br>eg:MOV A,#0FH;<br>5.变址寻址<br>地址为：PC或DPTR+A<br>只能对程序存储器ROM的数据进行操作，64KB，通常用于查表操作<br>MOVC A,@A+DPTR;<br>MOVC A,@A+PC;<br>JMP @A+DPTR;跳转<br>6.相对寻址<br>SJMP rel<br>地址偏移量用rel表示，rel是1个有符号的8位二进制补码，范围是-128~127<br>转移的目的地址&#x3D;转移指令地址+转移指令字节数+rel<br>程序存储器<br>7.位寻址<br>寻址范围：<br>（1）内部RAM的位寻址区<br>（2）特殊功能寄存器的可寻址位<br>eg：<br>SETB 20H;<br>MOV 32H,C;</p>
-<h3 id="数据传送与交换指令"><a href="#数据传送与交换指令" class="headerlink" title="数据传送与交换指令"></a>数据传送与交换指令</h3><p>操作码&lt;目的操作数&gt;，&lt;源操作数&gt;<br>MOV 片内RAM<br>MOVX 片外RAM<br>MOVC ROM<br>源操作数不变，目的操作数变成源操作数<br><a class="simple-lightbox" href="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E7%89%87%E5%86%85MOV%E8%BD%AC%E7%A7%BB.png"><img   src="/images/loading.svg" data-src="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E7%89%87%E5%86%85MOV%E8%BD%AC%E7%A7%BB.png"  alt="片内MOV转移" lazyload></a><br>别人都可以传给A<br>除了RnRi都可以传给Rn<br>直接地址全都可以传给自己，包括自己<br>立即数都不能传给自己，但都可以传给别人<br>建议记住画法</p>
+<h3 id="四、数据传送与交换指令"><a href="#四、数据传送与交换指令" class="headerlink" title="四、数据传送与交换指令"></a>四、数据传送与交换指令</h3><p>操作码&lt;目的操作数&gt;，&lt;源操作数&gt;<br>MOV 片内RAM<br>MOVX 片外RAM<br>MOVC ROM<br>源操作数不变，目的操作数变成源操作数<br><a class="simple-lightbox" href="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E7%89%87%E5%86%85MOV%E8%BD%AC%E7%A7%BB.png"><img   src="/images/loading.svg" data-src="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E7%89%87%E5%86%85MOV%E8%BD%AC%E7%A7%BB.png"  alt="片内MOV转移" lazyload></a><br>别人都可以传给A<br>除了RnRi都可以传给Rn<br>直接地址全都可以传给自己，包括自己<br>立即数都不能传给自己，但都可以传给别人<br>建议记住画法</p>
 <p>MOVX 的所有指令(与外部RAM进行数据交换)<br>MOVX A,@Ri;<br>MOVX @Ri，A;<br>MOVX A,@DPTR;<br>MOVX @DPTR,A;</p>
 <p>MOVC 查表指令，只能读取程序存储器，不能写<br>MOVC A，@A+DPTR;<br>MOVC A,@A+PC;</p>
 <p>字节交换指令<br>XCH A,Rn;<br>XCH A,dir;<br>XCH A,@Ri;<br>低半字节交换<br>XCHD A,@Ri;A是八位的，交换低八位<br>SWAP A;自己的高四位和低四位交换</p>
@@ -488,7 +492,7 @@
 <p><a class="simple-lightbox" href="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E4%BC%A0%E9%80%81%E6%95%B0%E6%8D%AE%E5%B9%B6%E5%88%A4%E6%96%AD%E4%BE%8B%E9%A2%98.png"><img   src="/images/loading.svg" data-src="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E4%BC%A0%E9%80%81%E6%95%B0%E6%8D%AE%E5%B9%B6%E5%88%A4%E6%96%AD%E4%BE%8B%E9%A2%98.png"  alt="例题" lazyload></a></p>
 <p>减一不为零跳转</p>
 <p>DJNZ Rn,rel;<br>DJNZ direct,rel;<br>相当于计数器</p>
-<p><a class="simple-lightbox" href="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E7%89%87%E5%A4%96%E6%B8%85%E9%9B%B6%E6%93%8D%E4%BD%9C.png"><img   src="/images/loading.svg" data-src="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E7%89%87%E5%A4%96%E6%B8%85%E9%9B%B6%E6%93%8D%E4%BD%9C.png"  alt="例题" lazyload></a></p>
+<p><a class="simple-lightbox" href="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E7%89%87%E5%A4%96%E6%B8%850%E6%93%8D%E4%BD%9C.png"><img   src="/images/loading.svg" data-src="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E7%89%87%E5%A4%96%E6%B8%850%E6%93%8D%E4%BD%9C.png"  alt="例题" lazyload></a></p>
 <p>子程序调用<br>调用指令和返回指令在子程序成对出现<br>调用子程序指令，会自动进行入栈和出栈操作，进行现场保护<br>短调用指令<br>ACALL addr11;2KB<br>长调用指令<br>LCALL addr16;64KB<br>返回指令<br>RET;子程序返回<br>RETI;中断程序返回</p>
 <p>NOP;空操作指令，用于测试或者延时</p>
 <p>位传送指令<br>MOV C,bit;<br>MOV bit,C;<br>例如<br>MOV P1.0,C;</p>
@@ -502,7 +506,7 @@
 <p>BIT位地址赋给名称<br>例如<br>P10 BIT P1.0<br>用P1.0代替P10<br><a class="simple-lightbox" href="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E6%AF%94%E8%BE%83%E5%A4%A7%E5%B0%8F%E4%BE%8B%E9%A2%98.png"><img   src="/images/loading.svg" data-src="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E6%AF%94%E8%BE%83%E5%A4%A7%E5%B0%8F%E4%BE%8B%E9%A2%98.png"  alt="例题" lazyload></a><br><a class="simple-lightbox" href="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E5%A4%9A%E5%88%86%E6%94%AF%E6%AF%94%E8%BE%83%E5%A4%A7%E5%B0%8F%E4%BE%8B%E9%A2%98.png"><img   src="/images/loading.svg" data-src="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E5%A4%9A%E5%88%86%E6%94%AF%E6%AF%94%E8%BE%83%E5%A4%A7%E5%B0%8F%E4%BE%8B%E9%A2%98.png"  alt="例题" lazyload></a></p>
 <p>循环结构<br>要先初始化，然后进行计算，还要有个循环计数器<br><a class="simple-lightbox" href="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E5%BE%AA%E7%8E%AF%E8%AE%A1%E7%AE%97%E4%BE%8B%E9%A2%98.png"><img   src="/images/loading.svg" data-src="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E5%BE%AA%E7%8E%AF%E8%AE%A1%E7%AE%97%E4%BE%8B%E9%A2%98.png"  alt="例题" lazyload></a></p>
 <p><a class="simple-lightbox" href="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E5%88%A9%E7%94%A8%E5%AD%90%E7%A8%8B%E5%BA%8F%E8%AE%A1%E7%AE%97%E4%BE%8B%E9%A2%981_1.png"><img   src="/images/loading.svg" data-src="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E5%88%A9%E7%94%A8%E5%AD%90%E7%A8%8B%E5%BA%8F%E8%AE%A1%E7%AE%97%E4%BE%8B%E9%A2%981_1.png"  alt="例题" lazyload></a><br><a class="simple-lightbox" href="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E5%88%A9%E7%94%A8%E5%AD%90%E7%A8%8B%E5%BA%8F%E8%AE%A1%E7%AE%97%E4%BE%8B%E9%A2%981_2.png"><img   src="/images/loading.svg" data-src="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E5%88%A9%E7%94%A8%E5%AD%90%E7%A8%8B%E5%BA%8F%E8%AE%A1%E7%AE%97%E4%BE%8B%E9%A2%981_2.png"  alt="例题" lazyload></a></p>
-<h3 id="中断服务"><a href="#中断服务" class="headerlink" title="中断服务"></a>中断服务</h3><table>
+<h3 id="五、中断服务"><a href="#五、中断服务" class="headerlink" title="五、中断服务"></a>五、中断服务</h3><table>
 <thead>
 <tr>
 <th>中断源</th>
@@ -748,15 +752,120 @@
 <li>清除中断请求标志位的操作</li>
 <li>恢复现场<br><a class="simple-lightbox" href="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E4%B8%AD%E6%96%AD%E7%BC%96%E7%A8%8B%E9%A2%981.png"><img   src="/images/loading.svg" data-src="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E4%B8%AD%E6%96%AD%E7%BC%96%E7%A8%8B%E9%A2%981.png"  alt="中断例题" lazyload></a><br><a class="simple-lightbox" href="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E4%B8%AD%E6%96%AD%E7%BC%96%E7%A8%8B%E9%A2%982.png"><img   src="/images/loading.svg" data-src="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E4%B8%AD%E6%96%AD%E7%BC%96%E7%A8%8B%E9%A2%982.png"  alt="中断例题" lazyload></a></li>
 </ul>
-<h3 id="定时-计数器"><a href="#定时-计数器" class="headerlink" title="定时&#x2F;计数器"></a>定时&#x2F;计数器</h3><p>定时，即对机器周期进行计数，如果是12MHz的晶振，则机器周期为1&#x2F;12*12&#x3D;1微秒，计数频率1MHz<br>计数，对外来脉冲进行计数<br>从外部输入口T0(P3.4)和T1(P3.5)两个引脚输入，对下降沿计数<br>一个下降沿跳变要两个机器周期，则要24个振荡周期，则频率就是1&#x2F;24振荡周期</p>
+<h3 id="六、定时-计数器"><a href="#六、定时-计数器" class="headerlink" title="六、定时&#x2F;计数器"></a>六、定时&#x2F;计数器</h3><p>定时，即对机器周期进行计数，如果是12MHz的晶振，则机器周期为1&#x2F;12*12&#x3D;1微秒，计数频率1MHz<br>计数，对外来脉冲进行计数<br>从外部输入口T0(P3.4)和T1(P3.5)两个引脚输入，对下降沿计数<br>一个下降沿跳变要两个机器周期，则要24个振荡周期，则频率就是1&#x2F;24振荡周期</p>
 <p>51单片机里面有两个可编程的16位定时器和计数器，简称T0，T1，<br>分为T0：TH0，TL0 T1：TH1，TL1<br>定时器计数不占用CPU时间<br>开始工作时要对定时器计数器进行初始化<br>包括TCON和TMOD<br><a class="simple-lightbox" href="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5CTMOD%E4%BD%BF%E7%94%A8%E5%9B%BE.png"><img   src="/images/loading.svg" data-src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5CTMOD%E4%BD%BF%E7%94%A8%E5%9B%BE.png"  alt="TMOD" lazyload></a><br><a class="simple-lightbox" href="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5CTCON%E4%BD%BF%E7%94%A8%E5%9B%BE.png"><img   src="/images/loading.svg" data-src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5CTCON%E4%BD%BF%E7%94%A8%E5%9B%BE.png"  alt="TCON" lazyload></a></p>
 <h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><p>1.对TMOD赋值<br>2.计算初值，送入TH0、TL0<br>3.如果使用中断要对IE赋值<br>4.将TR0或TR1置1，启动定时器和计数器</p>
 <p>如果有多个中断入口，CPU会自动进入它要响应的那个入口，然后进行跳转，给它一个新的地址来写中断响应程序，它不会进到别人的入口，因为CPU会将这些入口屏蔽</p>
 <p>工作方式：<br><a class="simple-lightbox" href="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F0.png"><img   src="/images/loading.svg" data-src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F0.png"  alt="工作方式" lazyload></a><br><a class="simple-lightbox" href="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F1.png"><img   src="/images/loading.svg" data-src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F1.png"  alt="工作方式" lazyload></a><br><a class="simple-lightbox" href="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F2.png"><img   src="/images/loading.svg" data-src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F2.png"  alt="工作方式" lazyload></a><br><a class="simple-lightbox" href="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F3.png"><img   src="/images/loading.svg" data-src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F3.png"  alt="工作方式" lazyload></a><br>定时器&#x2F;计数器例题<br><img src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E5%AE%9A%E6%97%B6%E5%99%A8%E6%9F%A5%E8%AF%A2%E6%96%B9%E5%BC%8F1.png" alt="定时器/计数器例题"><br><img src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E5%AE%9A%E6%97%B6%E5%99%A8%E6%9F%A5%E8%AF%A2%E6%96%B9%E5%BC%8F1_1.png" alt="定时器/计数器例题"><br>(2)<br><img src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%AD%E6%96%AD%E6%96%B9%E5%BC%8F1.png" alt="定时器/计数器例题"><br><img src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E5%AE%9A%E6%97%B6%E5%99%A8%E4%B8%AD%E6%96%AD%E6%96%B9%E5%BC%8F1_1.png" alt="定时器/计数器例题"><br>(3)<br><img src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E5%AE%9A%E6%97%B6%E5%99%A8%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F2.png" alt="定时器/计数器例题"><br><img src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E5%AE%9A%E6%97%B6%E5%99%A8%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F2_1.png" alt="定时器/计数器例题"></p>
+<h3 id="七、单片机串行通信"><a href="#七、单片机串行通信" class="headerlink" title="七、单片机串行通信"></a>七、单片机串行通信</h3><p>通信方式分为串行通信和并行通信<br>(1)并行方式————数据的各位同时发送或同时接收，速度快，但是要用到多根传输线，所以一般只在近距离使用<br><a class="simple-lightbox" href="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E5%B9%B6%E8%A1%8C%E9%80%9A%E4%BF%A1%E7%A4%BA%E6%84%8F%E5%9B%BE.png"><img   src="/images/loading.svg" data-src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E5%B9%B6%E8%A1%8C%E9%80%9A%E4%BF%A1%E7%A4%BA%E6%84%8F%E5%9B%BE.png"  alt="并行通信" lazyload></a><br>(2)串行通信<br>分为单工、全双工和半双工</p>
+<ul>
+<li>单工就是只允许一方是发送端，一方是接收端</li>
+<li>全双工就是双方都可以同时收发数据</li>
+<li>半双工就是双方可以收发数据但不能同时收发，只能是一方收，一方发<br><a class="simple-lightbox" href="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E4%B8%B2%E8%A1%8C%E9%80%9A%E4%BF%A1%E7%A4%BA%E6%84%8F%E5%9B%BE.png"><img   src="/images/loading.svg" data-src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E4%B8%B2%E8%A1%8C%E9%80%9A%E4%BF%A1%E7%A4%BA%E6%84%8F%E5%9B%BE.png"  alt="串行通信" lazyload></a></li>
+</ul>
+<p>串行通行可以分为：同步串行通信和异步串行通信<br>同步：先发送一个字符作为同步字符，再连续发送数据，数据之间不能有间隔，用时钟来同步，速度比异步快<br>异步：一个字符一个字符发送，因此要增加起始位、奇偶校验位和停止位</p>
+<table>
+<thead>
+<tr>
+<th>起始位</th>
+<th>数据位8位</th>
+<th>奇偶校验位</th>
+<th>停止位</th>
+</tr>
+</thead>
+</table>
+<p>先发送起始位，规定数据发送线上无数据时电平为1，发送数据时先发送一个低电平<br>数据位，低位先发送再发送高位<br>奇偶校验位，数据发送完后，发送奇偶校验位检验数据正确性<br>停止位，高电平有效，可以是1、1.5、2位<br>波特率，每秒传送二进制数码的位数 b&#x2F;s<br>串行口：由发送寄存器，接收寄存器，移位寄存器组成</p>
+<p><a class="simple-lightbox" href="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E4%B8%B2%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%AF%84%E5%AD%98%E5%99%A81.png"><img   src="/images/loading.svg" data-src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E4%B8%B2%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%AF%84%E5%AD%98%E5%99%A81.png"  alt="串行通信" lazyload></a><br><a class="simple-lightbox" href="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E4%B8%B2%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%AF%84%E5%AD%98%E5%99%A82.png"><img   src="/images/loading.svg" data-src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E4%B8%B2%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%AF%84%E5%AD%98%E5%99%A82.png"  alt="串行通信" lazyload></a><br><a class="simple-lightbox" href="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E4%B8%B2%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%AF%84%E5%AD%98%E5%99%A83.png"><img   src="/images/loading.svg" data-src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E4%B8%B2%E8%A1%8C%E6%8E%A7%E5%88%B6%E5%AF%84%E5%AD%98%E5%99%A83.png"  alt="串行通信" lazyload></a><br><a class="simple-lightbox" href="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E7%94%B5%E6%BA%90%E6%8E%A7%E5%88%B6%E5%AF%84%E5%AD%98%E5%99%A8.png"><img   src="/images/loading.svg" data-src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E7%94%B5%E6%BA%90%E6%8E%A7%E5%88%B6%E5%AF%84%E5%AD%98%E5%99%A8.png"  alt="串行通信" lazyload></a><br><a class="simple-lightbox" href="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E4%B8%B2%E8%A1%8C%E4%B8%AD%E6%96%AD%E6%8E%A7%E5%88%B6.png"><img   src="/images/loading.svg" data-src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E4%B8%B2%E8%A1%8C%E4%B8%AD%E6%96%AD%E6%8E%A7%E5%88%B6.png"  alt="串行通信" lazyload></a><br><a class="simple-lightbox" href="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E4%B8%B2%E8%A1%8C%E5%8F%A3%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F0.png"><img   src="/images/loading.svg" data-src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E4%B8%B2%E8%A1%8C%E5%8F%A3%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F0.png"  alt="串行通信" lazyload></a><br><a class="simple-lightbox" href="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E4%B8%B2%E8%A1%8C%E5%8F%A3%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F1.png"><img   src="/images/loading.svg" data-src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E4%B8%B2%E8%A1%8C%E5%8F%A3%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F1.png"  alt="串行通信" lazyload></a><br><a class="simple-lightbox" href="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E4%B8%B2%E8%A1%8C%E5%8F%A3%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F1_1.png"><img   src="/images/loading.svg" data-src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E4%B8%B2%E8%A1%8C%E5%8F%A3%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F1_1.png"  alt="串行通信" lazyload></a><br><a class="simple-lightbox" href="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E4%B8%B2%E8%A1%8C%E5%8F%A3%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F1_3.png"><img   src="/images/loading.svg" data-src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E4%B8%B2%E8%A1%8C%E5%8F%A3%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F1_3.png"  alt="串行通信" lazyload></a><br><a class="simple-lightbox" href="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E4%B8%B2%E8%A1%8C%E5%8F%A3%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F2%E5%92%8C3.png"><img   src="/images/loading.svg" data-src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E4%B8%B2%E8%A1%8C%E5%8F%A3%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F2%E5%92%8C3.png"  alt="串行通信" lazyload></a><br><a class="simple-lightbox" href="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F2%E5%92%8C3_1.png"><img   src="/images/loading.svg" data-src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F2%E5%92%8C3_1.png"  alt="串行通信" lazyload></a><br>波特率例题<br><a class="simple-lightbox" href="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E6%B3%A2%E7%89%B9%E7%8E%87%E4%BE%8B%E9%A2%98.png"><img   src="/images/loading.svg" data-src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E6%B3%A2%E7%89%B9%E7%8E%87%E4%BE%8B%E9%A2%98.png"  alt="串行通信" lazyload></a></p>
+<h3 id="八、考题"><a href="#八、考题" class="headerlink" title="八、考题"></a>八、考题</h3><p><a class="simple-lightbox" href="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E8%80%83%E9%A2%98.png"><img   src="/images/loading.svg" data-src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E8%80%83%E9%A2%98.png"  alt="考题" lazyload></a></p>
+<p>解答：<br>1.复位后，特殊功能寄存器回到初始状态0000H，不过其中SP&#x3D;07H，P0到P3&#x3D;FFH（悬1）<br>2.答: 80C51 有七种寻址方式:</p>
+<pre><code>1、立即寻址，用#表示，寻址空间为ROM;
+2、直接寻址，例如A，30H，寻址空间为片内RAM的低128B和特殊功能寄存器;
+3、寄存器寻址，用上Rn，寻址空间为A、B、DPTR、CY、通用工作寄存器等;
+4、寄存器间接寻址，用上@，片内RAM低128B、片外RAM;
+5、相对寻址，MOV rel；一般是标号，寻址空间为ROM; .
+6、变址寻址，@A+DPTR,寻址空间为ROM;
+7、位寻址，SETB，C等，寻址空间为片内RAM低128B的位寻址区的128个位，其字节地址为20H~2FH; 以及部分可以位寻址的特殊功能寄存器。
+</code></pre>
+<p>3.串行口有4种工作方式，通过SCON中的SMl、SM0位来决定<br>    工作方式0：<br>    八位同步移位寄存器<br>    (1)数据发送<br>    数据从RxD引脚串行输出，TXD引脚输出同步脉冲。<br>    (2)数据接收<br>    在满足REN&#x3D;l和RI&#x3D;0的条件下，串行口处于方式0输入。<br>    此时，RXD为数据输入端，TXD为同步信号输出端<br>    工作方式1：<br>    八位异步移位寄存器<br>    (1)数据发送<br>    发送时，数据从TXD端输出<br>4.一条乘法指令或者一条除法指令都需要 4 个机器周期,一个指令周期由1~4个机器周期组成,一个机器周期由6个状态周期，12个振荡周期组成<br>5.最长时间为2^N *机器周期&#x3D;2^N * (1&#x2F;晶振频率)*12<br>6.工作寄存器0区—3区，每个工作寄存器区为8字节（其中每字节分别记作R0-R7），共占用32字节的空间，0区的地址为00H-07H，1区的地址为08H-0FH，2区的地址为10H-17H，3区的地址为18H-1FH， 工作寄存器的选择由程序状态字PSW中RS0、RS1位的值决定，当RS1、RS0为00时选中0区，为01时选中1区，为10时选中2区，为11时选中3区<br>7.EA:中断允许总控制位<br>    EA&#x3D;0,中断总禁止<br>    EA&#x3D;1,中断总允许<br>    EA引脚必须接低电平<br>8.80C51的中断系统有5个中断源：3个在片内；2个在片外</p>
+<table>
+<thead>
+<tr>
+<th>中断源</th>
+<th>中断请求标志位</th>
+<th>中断入口地址</th>
+<th>自然优先级</th>
+<th>触发方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>反INT0(P3.2)</td>
+<td>IE0</td>
+<td>0003H</td>
+<td>最高</td>
+<td>低电平触发、或下降沿</td>
+</tr>
+<tr>
+<td>T0(P3.4)</td>
+<td>TF0</td>
+<td>000BH</td>
+<td></td>
+<td>T0溢出</td>
+</tr>
+<tr>
+<td>反INT1(P3.3)</td>
+<td>IE1</td>
+<td>0013H</td>
+<td>最高</td>
+<td>低电平触发、或下降沿</td>
+</tr>
+<tr>
+<td>T1(P3.5)</td>
+<td>TF1</td>
+<td>001BH</td>
+<td></td>
+<td>T1溢出</td>
+</tr>
+<tr>
+<td>串行口</td>
+<td>T1&#x2F;R1</td>
+<td>0023H</td>
+<td>最低</td>
+<td>串行口发送完成或接收完数据</td>
+</tr>
+</tbody></table>
+<p>注：INT是外部中断interfere<br><strong>这些在TCON里面</strong><br>当IT0 &#x3D; 0时，外部中断0被控制为电平触发方式。<br>当IT0 &#x3D; 1时，外部中断0被控制为边沿触发方式。</p>
+<p>IE0：外部中断0的中断请求标志。<br>当P3.2引脚信号有效时，IE0 &#x3D; 1，外部中断0向CPU申请<br>中断，当执行完后，由片内硬件自动清0。</p>
+<p>IE1：外部中断1的中断请求标志。<br>当P3.3引脚信号有效时，IE1 &#x3D; 1，外部中断1向CPU申请<br>中断，当执行完后，由片内硬件自动清0。</p>
+<p>TF0：定时器0溢出中断标志。<br>T0被启动计数后，从初值做加1计数，当计满溢出后由<br>硬件置位TF0，同时向CPU发出中断请求，此标志一直保<br>持到CPU响应中断后才由硬件自动清0。也可以由软件查<br>询该标志，并且由软件清0。</p>
+<p>TF1：定时器1溢出中断标志。<br>T1被启动计数后，从初值做加1计数，当计满溢出后由<br>硬件置位TF1，同时向CPU发出中断请求，此标志一直保<br>持到CPU响应中断后才由硬件自动清0。也可以由软件查<br>询该标志，并且由软件清0。</p>
+<p><strong>串行的在SCON里面</strong></p>
+<p>TI：串行发送中断标志。<br>CPU将一个数据写入发送缓冲器SBUF时，就启动发送，<br>每发送完一个串行帧数据后，硬件将使TI置位。但CPU<br>响应中断时并不清除TI，必须在中断服务程序中由软件<br>清除。</p>
+<p>RI：串行接收中断标志。<br>在串行口允许接收时，每接收完一个串行帧数据，<br>硬件将使RI置位。同样，CPU在响应中断时不会<br>清除RI，必须在中断服务程序中由软件清除。</p>
+<p>中断服务入口地址设置一条跳转指令,转移到<br>中断服务程序的实际入口地址。 最好用LJMP指令，<br>这样很方便地将中断服务程序不受限制的安排在64K<br>B任何地方。因为51单片机的5个中断源的中断服务程序入口地址太接近，就8个单元的空，一般的中断程序放不下，所以编程时把中断服务程序放在较远的容量足够大的地方</p>
+<p>9.访问外扩展的数据存储器，要由P2口提供高8位地址，P0<br>口提供低8位地址和8位双向数据总线</p>
+<p>10.存储类型<br><a class="simple-lightbox" href="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%B1%BB%E5%9E%8B.png"><img   src="/images/loading.svg" data-src="/%5Cimages%5C%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA%5C%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%B1%BB%E5%9E%8B.png"  alt="存储类型" lazyload></a><br>函数类型 函数名（形式参数表） interrupt n using n<br>关键字interrupt是中断号，对于51单片机，n取值为<br>0~4。<br>关键字using后的 n是所选择的寄存器组，using是一个<br>选项，可省略</p>
+<p>11<br>C51语言的强大功能及其高效率在于提供了丰富的可直<br>接调用的库函数。库函数可以使程序代码简单、结构清晰、<br>易于调试和维护。</p>
+<p>下面介绍几类重要的库函数。<br>特殊功能寄存器包含文件reg51.h或reg52.h。<br>reg51.h中包含所有的8051的sfr及其位定义。<br>reg52.h中包含所有8052的sfr及其位定义，一般系统<br>都包含reg51.h或reg52.h。</p>
+<p>绝对地址包含文件absacc.h：该文件定义了几个宏，<br>以确定各类存储空间的绝对地址。</p>
+<p>输入&#x2F;输出流函数位于stadio.h文件中。流函数默认<br>8051的串口来作为数据的输入&#x2F;输出。如果要修改为<br>用户定义的I&#x2F;O口读写数据，例如，改为LCD显示，<br>可以修改lib目录中的getkey.c及putchar.c源文件，<br>然后在库中替换它们既可。</p>
+<p>动态内存分配函数，位于stdlib.h中。<br>能够对方便地对缓冲区进行处理的缓冲区处理函数位<br>于string.h中。其中包括复制、移动、比较等函数</p>
+<ol start="12">
+<li>CPU（微处理器）<br>8位，与通用CPU基本相同，包括了运算器和控制器两大部分，<br>还有面向控制的位处理功能。<br>运算器：<br>算术逻辑运算单元ALU<br>累加器A<br>程序状态字寄存器PSW</li>
+</ol>
+<p>控制器包括：程序计数器、指令寄存器、指令译码器、定<br>时及控制逻辑电路等。功能是控制指令的读入、译码和执<br>行，从而对各功能部件进行定时和逻辑控制。<br>13<br>指示堆栈顶部在内部RAM块中的位置。<br>堆栈结构–向上生长型。单片机复位后，SP为07H，使<br>得堆栈实际上从08H单元开始，由于08H～1FH单元分别属<br>于1～3组的工作寄存器区，最好在复位后把SP值改为60H或<br>更大值，避免堆栈与工作寄存器冲突。<br>14<br>51单片机数据储存器扩展最大容量可达64K字节， 地址范围：0000h～FFFFh<br>15<br>关键字 <em>at</em> 可对指定的存储器空间的绝对地址访问，格<br>式如下：<br>[存储器类型] 数据类型说明符 变量名 <em>at</em> 地址常数<br>其中，存储器类型为C51能识别的数据类型；数据类型为<br>C51支持的数据类型；地址常数用于指定变量的绝对地址，<br>必须位于有效的存储器空间之内；使用 <em>at</em> 定义的变量必<br>须为全局变量<br>16<br>与8051汇编语言相比， C51有如下优点。</p>
+<p>可读性好。C51语言程序比汇编语言程序的可读性好，<br>编程效率高，程序便于修改、维护以及升级。</p>
+<p>模块化开发与资源共享。用C51开发的程序模块可不经<br>修改，直接被其他工程所用，使得开发者能够很好地<br>利用已有的大量标准C程序资源与丰富的库函数，减少<br>重复劳动，同时也有利于多个工程师进行协同开发。</p>
+<p>可移植性好。为某种型号单片机开发的C语言程序，只<br>需把与硬件相关的头文件和编译链接的参数进行适当<br>修改，就可方便地移植到其他型号的单片机上。<br>C51语言与8051汇编语言比较</p>
+<p>生成的代码效率高。当前较好的C51语言编译系统编<br>译出来的代码效率只比直接使用汇编语言低20%左右，<br>如果使用优化编译选项，最高可达到90%左右</p>
+<ol start="17">
+<li></li>
+<li></li>
+</ol>
+<p>#include&lt;reg51.h&gt;<br>unsigned char dispcode[]&#x3D;{0xc0,0xf9,0xa4,0xb0,0x99,0x92,<br>0x82,0xf8,0x80,0x90}; &#x2F;&#x2F;共阳数码管的段码<br>void delay10ms(int n);<br>void main(void)<br>{<br>char i;<br>while(1)<br>{<br>for (i &#x3D; 0; i &lt;10; i++)<br>{<br>P1 &#x3D; dispcode[i]; &#x2F;&#x2F;数码管更新显示<br>delay10ms(50); &#x2F;&#x2F;延时500ms<br>}<br>}<br>}<br>&#x2F;&#x2F;10ms延时函数，应用于12.0MHz时钟。<br>void delay10ms(int n)<br>{<br>int i&#x3D;0,j;<br>while(n–)<br>{<br>for(i&#x3D;0;i&lt;10;i++)<br>{<br>for(j &#x3D; 0; j &lt; 125; j++);<br>}<br>}<br>}</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
         </div>
         <div class="top-div">
-          <ol class="top-box"><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E4%B8%80%E3%80%81%E7%BB%AA%E8%AE%BA"><span class="top-box-text">一、绪论</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E4%BA%8C%E3%80%81%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E7%BB%93%E6%9E%84"><span class="top-box-text">二、微型计算机组成与结构</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E4%B8%89%E3%80%81%E5%8D%95%E7%89%87%E6%9C%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F"><span class="top-box-text">三、单片机汇编语言指令系统</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81%E4%B8%8E%E4%BA%A4%E6%8D%A2%E6%8C%87%E4%BB%A4"><span class="top-box-text">数据传送与交换指令</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E4%B8%AD%E6%96%AD%E6%9C%8D%E5%8A%A1"><span class="top-box-text">中断服务</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E5%AE%9A%E6%97%B6-%E8%AE%A1%E6%95%B0%E5%99%A8"><span class="top-box-text">定时&#x2F;计数器</span></a></li></ol>
+          <ol class="top-box"><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E4%B8%80%E3%80%81%E7%BB%AA%E8%AE%BA"><span class="top-box-text">一、绪论</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E4%BA%8C%E3%80%81%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E7%BB%93%E6%9E%84"><span class="top-box-text">二、微型计算机组成与结构</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E4%B8%89%E3%80%81%E5%8D%95%E7%89%87%E6%9C%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F"><span class="top-box-text">三、单片机汇编语言指令系统</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E5%9B%9B%E3%80%81%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81%E4%B8%8E%E4%BA%A4%E6%8D%A2%E6%8C%87%E4%BB%A4"><span class="top-box-text">四、数据传送与交换指令</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E4%BA%94%E3%80%81%E4%B8%AD%E6%96%AD%E6%9C%8D%E5%8A%A1"><span class="top-box-text">五、中断服务</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E5%85%AD%E3%80%81%E5%AE%9A%E6%97%B6-%E8%AE%A1%E6%95%B0%E5%99%A8"><span class="top-box-text">六、定时&#x2F;计数器</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E4%B8%83%E3%80%81%E5%8D%95%E7%89%87%E6%9C%BA%E4%B8%B2%E8%A1%8C%E9%80%9A%E4%BF%A1"><span class="top-box-text">七、单片机串行通信</span></a></li><li class="top-box-item top-box-level-3"><a class="top-box-link" href="#%E5%85%AB%E3%80%81%E8%80%83%E9%A2%98"><span class="top-box-text">八、考题</span></a></li></ol>
         </div>
       </div>
     </div>
