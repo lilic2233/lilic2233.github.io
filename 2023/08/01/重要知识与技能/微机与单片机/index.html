@@ -11,20 +11,12 @@
 
 <title>微机与单片机</title>
 <meta name="keywords" content="微机与单片机, Lilic的博客">
-<meta name="description" content="目录
-01绪论02微型计算机组成与结构03单片机汇编语言指令系统04数据传送与交换指令05中断服务06定时&#x2F;计数器07单片机串行通信08考题
-一、绪论
-冯·诺依曼计算机由运算、控制、储存、输入、输出五个部件构成
-第四代电子计算机以">
+<meta name="description" content="后记：补考结束，没啥问题，虽然结果还没出来，这里要说明一下平时多学习积累的重要性，还有平时多进行记忆，不然很多东西其实一下子没法记住，特别是光看不练，还是得多靠自己的脑子进行复现，复现是检验你是否理解的重要指标之一，然后才是创造和提高，先能">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta property="og:title" content="微机与单片机">
-<meta property="og:description" content="目录
-01绪论02微型计算机组成与结构03单片机汇编语言指令系统04数据传送与交换指令05中断服务06定时&#x2F;计数器07单片机串行通信08考题
-一、绪论
-冯·诺依曼计算机由运算、控制、储存、输入、输出五个部件构成
-第四代电子计算机以">
+<meta property="og:description" content="后记：补考结束，没啥问题，虽然结果还没出来，这里要说明一下平时多学习积累的重要性，还有平时多进行记忆，不然很多东西其实一下子没法记住，特别是光看不练，还是得多靠自己的脑子进行复现，复现是检验你是否理解的重要指标之一，然后才是创造和提高，先能">
 
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="stylesheet" href="/style/main.css">
@@ -97,7 +89,8 @@
       </div>
       <div class="post-content-wrapper">
         <div class="post-content">
-          <p><span style=" color: red;"><strong>目录</strong></span></p>
+          <p><strong>后记：补考结束，没啥问题，虽然结果还没出来，这里要说明一下平时多学习积累的重要性，还有平时多进行记忆，不然很多东西其实一下子没法记住，特别是光看不练，还是得多靠自己的脑子进行复现，复现是检验你是否理解的重要指标之一，然后才是创造和提高，先能进行复现其他再说，还有就是有人给你指明方向也很重要，如果没有老师进行透题，虽然我复习了很多，但大部分都不考，相当于做无用功，很多时候就是这样子，学的全面自然重要，但要是能知道考试范围就能大大降低学习难度</strong></p>
+<p><span style=" color: red;"><strong>目录</strong></span></p>
 <p><a href="#%E4%B8%80%E3%80%81%E7%BB%AA%E8%AE%BA">01绪论</a><br><a href="#%E4%BA%8C%E3%80%81%E5%BE%AE%E5%9E%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E7%BB%93%E6%9E%84">02微型计算机组成与结构</a><br><a href="#%E4%B8%89%E3%80%81%E5%8D%95%E7%89%87%E6%9C%BA%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F">03单片机汇编语言指令系统</a><br><a href="#%E5%9B%9B%E3%80%81%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%81%E4%B8%8E%E4%BA%A4%E6%8D%A2%E6%8C%87%E4%BB%A4">04数据传送与交换指令</a><br><a href="#%E4%BA%94%E3%80%81%E4%B8%AD%E6%96%AD%E6%9C%8D%E5%8A%A1">05中断服务</a><br><a href="#%E5%85%AD%E3%80%81%E5%AE%9A%E6%97%B6/%E8%AE%A1%E6%95%B0%E5%99%A8">06定时&#x2F;计数器</a><br><a href="#%E4%B8%83%E3%80%81%E5%8D%95%E7%89%87%E6%9C%BA%E4%B8%B2%E8%A1%8C%E9%80%9A%E4%BF%A1">07单片机串行通信</a><br><a href="#%E5%85%AB%E3%80%81%E8%80%83%E9%A2%98">08考题</a></p>
 <h3 id="一、绪论"><a href="#一、绪论" class="headerlink" title="一、绪论"></a>一、绪论</h3><ul>
 <li>冯·诺依曼计算机由运算、控制、储存、输入、输出五个部件构成</li>
@@ -496,7 +489,8 @@
 <p>子程序调用<br>调用指令和返回指令在子程序成对出现<br>调用子程序指令，会自动进行入栈和出栈操作，进行现场保护<br>短调用指令<br>ACALL addr11;2KB<br>长调用指令<br>LCALL addr16;64KB<br>返回指令<br>RET;子程序返回<br>RETI;中断程序返回</p>
 <p>NOP;空操作指令，用于测试或者延时</p>
 <p>位传送指令<br>MOV C,bit;<br>MOV bit,C;<br>例如<br>MOV P1.0,C;</p>
-<p>位置一，位清零<br>SETB C;<br>SETB bit;<br>CLR C;<br>CLR bit;<br>例如<br>SETB P1.2;<br>CLR P3.3;<br>位与指令<br>ANL C,bit;<br>ANL C,&#x2F;bit;将bit取反后再和C相与，存入C<br>位或指令<br>ORL C，bit;<br>ORL C,&#x2F;bit;<br>位取反指令<br>CPL C;<br>位控制转移指令<br>JC rel;CY&#x3D;1 转移<br>JNC rel; CY&#x3D;0 转移<br>JB rel;<br>JNB rel;if bit&#x3D;0 jump<br>JBC bit,rel;if bit&#x3D;1 jump and bit clear to 0</p>
+<p>位置一，位清零<br>SETB C;<br>SETB bit;<br>CLR C;<br>CLR bit;<br>例如<br>SETB P1.2;<br>CLR P3.3;<br>位与指令<br>ANL C,bit;<br>ANL C,&#x2F;bit;将bit取反后再和C相与，存入C<br>位或指令<br>ORL C，bit;<br>ORL C,&#x2F;bit;<br>位取反指令<br>CPL C;<br>位控制转移指令<br>JC rel;CY&#x3D;1 转移<br>JNC rel; CY&#x3D;0 转移</p>
+<p>JB ACC.7,rel; 这样也可以<br>JNB rel;if bit&#x3D;0 jump<br>JBC bit,rel;if bit&#x3D;1 jump and bit clear to 0</p>
 <p>Program Design<br>伪指令(编写程序要用，生成的汇编程序中没有)<br>ORG 16位地址<br>程序开始规定起始地址，一般是0030H开始，如果不规定就是0000H</p>
 <p>END 汇编结束指令，整个源程序只能有一条END;</p>
 <p>EQU 标号赋值伪指令<br>字符名称 EQU 赋值项<br>例如：<br>TEMP EQU 20H;<br>则之后的TEMP都可以用20H代替</p>
@@ -786,7 +780,21 @@
 6、变址寻址，@A+DPTR,寻址空间为ROM;
 7、位寻址，SETB，C等，寻址空间为片内RAM低128B的位寻址区的128个位，其字节地址为20H~2FH; 以及部分可以位寻址的特殊功能寄存器。
 </code></pre>
-<p>3.串行口有4种工作方式，通过SCON中的SMl、SM0位来决定<br>    工作方式0：<br>    八位同步移位寄存器<br>    (1)数据发送<br>    数据从RxD引脚串行输出，TXD引脚输出同步脉冲。<br>    (2)数据接收<br>    在满足REN&#x3D;l和RI&#x3D;0的条件下，串行口处于方式0输入。<br>    此时，RXD为数据输入端，TXD为同步信号输出端<br>    工作方式1：<br>    八位异步移位寄存器<br>    (1)数据发送<br>    发送时，数据从TXD端输出<br>4.一条乘法指令或者一条除法指令都需要 4 个机器周期,一个指令周期由1~4个机器周期组成,一个机器周期由6个状态周期，12个振荡周期组成<br>5.最长时间为2^N *机器周期&#x3D;2^N * (1&#x2F;晶振频率)*12<br>6.工作寄存器0区—3区，每个工作寄存器区为8字节（其中每字节分别记作R0-R7），共占用32字节的空间，0区的地址为00H-07H，1区的地址为08H-0FH，2区的地址为10H-17H，3区的地址为18H-1FH， 工作寄存器的选择由程序状态字PSW中RS0、RS1位的值决定，当RS1、RS0为00时选中0区，为01时选中1区，为10时选中2区，为11时选中3区<br>7.EA:中断允许总控制位<br>    EA&#x3D;0,中断总禁止<br>    EA&#x3D;1,中断总允许<br>    EA引脚必须接低电平<br>8.80C51的中断系统有5个中断源：3个在片内；2个在片外</p>
+<p>3.串行口有4种工作方式，通过SCON中的SMl、SM0位来决定</p>
+<p>|SM0 |SM1 |工作方式 |功能说明|<br>|—-|—-|—-|—-|—-|<br>|0|0|0|同步移位寄存器输入&#x2F;输出，波特率为fOSC&#x2F;12|<br>|0|1|1|8位UART，波特率可变（TI溢出率&#x2F;n，n&#x3D;16或32）|<br>|1|0|2|9位UART，波特率为fosc&#x2F;n，n&#x3D;32或64）|<br>|1|1|3|9位UART，波特率可变（TI溢出率&#x2F;n，n&#x3D;16或32）|</p>
+<pre><code>工作方式0：
+八位同步移位寄存器
+(1)数据发送
+数据从RxD引脚串行输出，TXD引脚输出同步脉冲。
+(2)数据接收
+在满足REN=l和RI=0的条件下，串行口处于方式0输入。
+此时，RXD为数据输入端，TXD为同步信号输出端
+工作方式1：
+八位异步移位寄存器
+(1)数据发送
+发送时，数据从TXD端输出
+</code></pre>
+<p>4.一条乘法指令或者一条除法指令都需要 4 个机器周期,一个指令周期由1~4个机器周期组成,一个机器周期由6个状态周期，12个振荡周期组成<br>5.最长时间为2^N *机器周期&#x3D;2^N * (1&#x2F;晶振频率)*12<br>6.工作寄存器0区—3区，每个工作寄存器区为8字节（其中每字节分别记作R0-R7），共占用32字节的空间，0区的地址为00H-07H，1区的地址为08H-0FH，2区的地址为10H-17H，3区的地址为18H-1FH， 工作寄存器的选择由程序状态字PSW中RS0、RS1位的值决定，当RS1、RS0为00时选中0区，为01时选中1区，为10时选中2区，为11时选中3区<br>7.EA:中断允许总控制位<br>    EA&#x3D;0,中断总禁止<br>    EA&#x3D;1,中断总允许<br>    EA引脚必须接低电平<br>8.80C51的中断系统有5个中断源：3个在片内；2个在片外</p>
 <table>
 <thead>
 <tr>
@@ -845,7 +853,8 @@
 <p>9.访问外扩展的数据存储器，要由P2口提供高8位地址，P0<br>口提供低8位地址和8位双向数据总线</p>
 <p>10.存储类型</p>
 <p><a class="simple-lightbox" href="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%B1%BB%E5%9E%8B.png"><img   src="/images/loading.svg" data-src="/images/%E5%BE%AE%E6%9C%BA%E4%B8%8E%E5%8D%95%E7%89%87%E6%9C%BA/%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%B1%BB%E5%9E%8B.png"  alt="存储类型" lazyload></a><br>函数类型 函数名（形式参数表） interrupt n using n<br>关键字interrupt是中断号，对于51单片机，n取值为<br>0~4。<br>关键字using后的 n是所选择的寄存器组，using是一个<br>选项，可省略</p>
-<p>11<br>C51语言的强大功能及其高效率在于提供了丰富的可直<br>接调用的库函数。库函数可以使程序代码简单、结构清晰、<br>易于调试和维护。</p>
+<p>11</p>
+<p>C51语言的强大功能及其高效率在于提供了丰富的可直<br>接调用的库函数。库函数可以使程序代码简单、结构清晰、<br>易于调试和维护。</p>
 <p>下面介绍几类重要的库函数。<br>特殊功能寄存器包含文件reg51.h或reg52.h。<br>reg51.h中包含所有的8051的sfr及其位定义。<br>reg52.h中包含所有8052的sfr及其位定义，一般系统<br>都包含reg51.h或reg52.h。</p>
 <p>绝对地址包含文件absacc.h：该文件定义了几个宏，<br>以确定各类存储空间的绝对地址。</p>
 <p>输入&#x2F;输出流函数位于stadio.h文件中。流函数默认<br>8051的串口来作为数据的输入&#x2F;输出。如果要修改为<br>用户定义的I&#x2F;O口读写数据，例如，改为LCD显示，<br>可以修改lib目录中的getkey.c及putchar.c源文件，<br>然后在库中替换它们既可。</p>
@@ -863,6 +872,7 @@
 <li></li>
 </ol>
 <p>#include&lt;reg51.h&gt;<br>unsigned char dispcode[]&#x3D;{0xc0,0xf9,0xa4,0xb0,0x99,0x92,<br>0x82,0xf8,0x80,0x90}; &#x2F;&#x2F;共阳数码管的段码<br>void delay10ms(int n);<br>void main(void)<br>{<br>char i;<br>while(1)<br>{<br>for (i &#x3D; 0; i &lt;10; i++)<br>{<br>P1 &#x3D; dispcode[i]; &#x2F;&#x2F;数码管更新显示<br>delay10ms(50); &#x2F;&#x2F;延时500ms<br>}<br>}<br>}<br>&#x2F;&#x2F;10ms延时函数，应用于12.0MHz时钟。<br>void delay10ms(int n)<br>{<br>int i&#x3D;0,j;<br>while(n–)<br>{<br>for(i&#x3D;0;i&lt;10;i++)<br>{<br>for(j &#x3D; 0; j &lt; 125; j++);<br>}<br>}<br>}</p>
+<p>数码管码段的计算方式<br><a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/20b68a88f2c3bf796dec625f.html">https://jingyan.baidu.com/article/20b68a88f2c3bf796dec625f.html</a><br>其实就是8的每个管对应a、b、c…g,还有一个dp共阴的是0，共阳的是1，然后翻译成二进制到十六进制，前面用0x（十六进制的前缀）<br>阴极1表示开，阳极是0表示开，他们刚好所有数字都是反过来的</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
         </div>
         <div class="top-div">
