@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    
+
+    
+<script>!function(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,t=localStorage.getItem("use-color-scheme")||"auto";("dark"===t||e&&"light"!==t)&&document.documentElement.classList.toggle("dark",!0)}()</script>
+    
+
+<meta charset="utf-8" >
+
+<title>Java第二模块</title>
+<meta name="keywords" content="Java第二模块, Lilic的博客">
+<meta name="description" content="
+创建类的好处
+可以创建无数个对象
+可以有不同数据类型的属性
+可以有不同的方法
+
+
+
+123456789101112131415public class Card&#123;    //属性，又叫成员变量：类里面，方法外面定义，并且不加st">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Java第二模块">
+<meta property="og:description" content="
+创建类的好处
+可以创建无数个对象
+可以有不同数据类型的属性
+可以有不同的方法
+
+
+
+123456789101112131415public class Card&#123;    //属性，又叫成员变量：类里面，方法外面定义，并且不加st">
+
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="stylesheet" href="/style/main.css">
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div id="app" class="main">
+
+<div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://lilic2233.github.io">
+        <img class="avatar" src="/images/avatar.png" alt="logo" width="32px" height="32px">
+      </a>
+      <a href="https://lilic2233.github.io">
+        <h1 class="site-title">Lilic的博客</h1>
+      </a>
+    </div>
+    <div class="right">
+        <i class="icon menu-switch icon-menu-outline" ></i>
+    </div>
+  </div>
+</div>
+
+<div class="menu-container" style="height: 0;opacity: 0;">
+<nav class="menu-list">
+  
+    
+      <a href="/" class="menu purple-link">
+        首页
+      </a>
+    
+  
+    
+      <a href="/tags" class="menu purple-link">
+        标签
+      </a>
+    
+  
+    
+      <a href="/categories" class="menu purple-link">
+        分类
+      </a>
+    
+  
+    
+      <a href="/archives" class="menu purple-link">
+        归档
+      </a>
+    
+  
+    
+      <a href="/about" class="menu purple-link">
+        关于
+      </a>
+    
+  
+</nav>
+</div>
+
+
+
+  <div class="content-container">
+    <div class="post-detail">
+      
+      <h2 class="post-title">Java第二模块</h2>
+      <div class="post-info post-detail-info">
+        <span><i class="icon icon-calendar-outline"></i> 2023-09-11</span>
+        
+      </div>
+      <div class="post-content-wrapper">
+        <div class="post-content">
+          <ul>
+<li>创建类的好处<ul>
+<li>可以创建无数个对象</li>
+<li>可以有不同数据类型的属性</li>
+<li>可以有不同的方法</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Card</span>&#123;</span><br><span class="line">    <span class="comment">//属性，又叫成员变量：类里面，方法外面定义，并且不加static，创建对象后才会分配空间，而且每个对象都有自己不同的成员变量</span></span><br><span class="line">    <span class="type">double</span> money;<span class="comment">//定义完后有默认值</span></span><br><span class="line">    String cid;</span><br><span class="line">    String pwd;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">give</span><span class="params">()</span>&#123;<span class="comment">//类函数，又叫成员方法，不加static，创建对象以后才能使用</span></span><br><span class="line">        System.out.println(<span class="string">&quot;给你卡片&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="comment">//卡片类</span></span><br><span class="line"><span class="comment">//创建卡片对象</span></span><br><span class="line">Card c=<span class="keyword">new</span> <span class="title class_">Card</span>();<span class="comment">//Card是构造函数，每个类里面有个默认的，不用写</span></span><br><span class="line">c.money=<span class="number">10000</span>;</span><br><span class="line">c.cid=<span class="string">&quot;111111111111&quot;</span>;</span><br><span class="line">c.pwd=<span class="string">&quot;123456&quot;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>构造函数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造函数的特点：没有返回类型，名字与类名相同</span></span><br><span class="line"><span class="keyword">public</span> <span class="title function_">Person</span><span class="params">()</span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;我是人&quot;</span>);<span class="comment">//覆盖默认的构造函数</span></span><br><span class="line">&#125;<span class="comment">//一般无参默认构造函数要写上</span></span><br><span class="line"><span class="comment">//利用构造函数赋值</span></span><br><span class="line"><span class="keyword">public</span> <span class="title function_">Person</span><span class="params">(String name,<span class="type">int</span> age,<span class="type">char</span> sex,<span class="type">float</span> h)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.name=name;<span class="comment">//this指的是当前对象，谁调用就是谁</span></span><br><span class="line">    <span class="built_in">this</span>.age=age;<span class="comment">//this在类内部使用</span></span><br><span class="line">    <span class="built_in">this</span>.sex=sex;</span><br><span class="line">    <span class="built_in">this</span>.h=h;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//可以有多个构造函数，但是参数列表得不同，也就是方法重载（与前面的控制符无关）</span></span><br><span class="line"><span class="comment">//重载：方法名相同，参数列表不同，参数个数不同或者参数类型不同</span></span><br><span class="line"><span class="comment">//构造函数是在new后面调用，不能用对象来调用</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Rectangle</span>&#123;</span><br><span class="line">    Point p1;</span><br><span class="line">    Point p2;<span class="comment">//对象里面包含对象</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Rectangle</span><span class="params">(Point p1, Point p2)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.p1 = p1;</span><br><span class="line">        <span class="built_in">this</span>.p2 = p2;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">area</span><span class="params">(Point p1, Point p2)</span> &#123;</span><br><span class="line">        p1.x++;<span class="comment">//可以修改其他对象的成员变量，但是private的不能直接修改</span></span><br><span class="line">                <span class="comment">//private想要自减就得在类内部创建自减函数</span></span><br><span class="line">        <span class="keyword">return</span> (p1.x-p2.x)*(p1.y-p2.y);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Point</span>&#123;</span><br><span class="line">    <span class="type">double</span> x;</span><br><span class="line">    <span class="type">double</span> y;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Point</span><span class="params">(<span class="type">double</span> x, <span class="type">double</span> y)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.x = x;</span><br><span class="line">        <span class="built_in">this</span>.y = y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Rectangle rect=<span class="keyword">new</span> <span class="title class_">Rectangle</span>();<span class="comment">//创建Rectangle的同时创建了Point</span></span><br><span class="line">rect.p1.x=<span class="number">1</span>;<span class="comment">//赋值方法1</span></span><br><span class="line">rect.p2.x=<span class="number">2</span>;</span><br><span class="line">rect.p1.y=<span class="number">1</span>;</span><br><span class="line">rect.p2.y=<span class="number">2</span>;<span class="comment">//多次.出来</span></span><br><span class="line"></span><br><span class="line">rect.p1=<span class="keyword">new</span> <span class="title class_">Point</span>(<span class="number">1</span>,<span class="number">1</span>);<span class="comment">//构造函数用在new后面</span></span><br><span class="line">rect.p2=<span class="keyword">new</span> <span class="title class_">Point</span>(<span class="number">2</span>,<span class="number">2</span>);<span class="comment">//法二</span></span><br><span class="line"></span><br><span class="line">Rectangle rect2=<span class="keyword">new</span> <span class="title class_">Rectangle</span>(<span class="keyword">new</span> <span class="title class_">Point</span>(<span class="number">1</span>,<span class="number">1</span>),<span class="keyword">new</span> <span class="title class_">Point</span>(<span class="number">2</span>,<span class="number">2</span>));<span class="comment">//法三</span></span><br><span class="line"></span><br><span class="line">System.out.println(rect2.area(p1,p2));<span class="comment">//对象之间的交互靠传递对象参数的函数</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>封装</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//为了不让外部赋值出现错误，所以赋值得用get set方法先进行判断</span></span><br><span class="line">person.age=-<span class="number">100</span>;<span class="comment">//这是错误的</span></span><br><span class="line"><span class="comment">//用private放在类变量前面，则该变量出了类就无法赋值了，或者任何修改操作了，除非用类内部专门进行修改的函数</span></span><br><span class="line"><span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setAge</span><span class="params">(<span class="type">int</span> age)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(age&gt;=<span class="number">0</span>)</span><br><span class="line">        <span class="built_in">this</span>.age=age;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        System.out.println(<span class="string">&quot;年龄不合法&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//一般成员变量都是私有的</span></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getAge</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.age;<span class="comment">//有set一般就有get，除非是只读或者只写</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//在eclipse里导航栏的source里面可以快捷添加getter和setter方法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方法也能私有，在类外部就用不了了，一般用于为类内部的其他方法所调用，成为某个方法的组件</span></span><br></pre></td></tr></table></figure></li>
+<li><p>静态变量,静态方法,静态块</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line"><span class="keyword">private</span> String name;</span><br><span class="line"><span class="keyword">static</span> <span class="type">int</span> count=<span class="number">0</span>;<span class="comment">//添加了static则所有对象共用一个count，一个对象修改count，则全部对象count都被修改</span></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">test</span><span class="params">()</span>&#123;</span><br><span class="line">    System.out.println(name);<span class="comment">//会报错，因为静态方法不能访问成员变量（可以访问静态变量），因为静态方法在new之前就有了，而成员变量是在new之后才有值的</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">print</span><span class="params">()</span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;总共打印了&quot;</span>+count+<span class="string">&quot;个对象&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">Person.count;<span class="comment">//可以用对象名访问，但最好用类名访问</span></span><br><span class="line">Person.print();</span><br><span class="line"><span class="comment">//系统自带的函数中，如果不用new的就是静态方法（带s的）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//静态块</span></span><br><span class="line"><span class="keyword">static</span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;类加载完毕了&quot;</span>);<span class="comment">//用于初始化操作，代码加载完毕后，是最先开始的自动运行的</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>小知识点<br>新建包，就相当于建了文件夹，不同包里面的相同的文件名就不会冲突<br>如果命名为：aaa.bbb.ccc就会建三层文件夹</p>
+</li>
+<li><p>继承</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Dog</span> <span class="keyword">extends</span> <span class="title class_">Animal</span> &#123;<span class="comment">//子类继承父类会拥有父类所有非私有的属性和方法</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//如果要利用父类的私有属性对子类属性进行赋值，可以用</span></span><br><span class="line"><span class="built_in">this</span>.setName(name);<span class="comment">//这样，因为无法直接访问父类私有属性</span></span><br><span class="line"><span class="comment">//显然父类不能访问子类的</span></span><br><span class="line"><span class="comment">//一个子类不能继承多个父类</span></span><br><span class="line"><span class="comment">//但是父类（子类）可以被多个子类继承</span></span><br><span class="line">Dog d=<span class="keyword">new</span> <span class="title class_">Dog</span>();<span class="comment">//在创建子类对象时，会先调用父类的无参构造函数，创造一个父类的匿名对象</span></span><br><span class="line"><span class="comment">//然后子类才能使用父类的非私有属性和方法</span></span><br><span class="line"><span class="comment">//如果要调用父类的有参构造函数来对子类属性赋值可以用super</span></span><br><span class="line"><span class="keyword">public</span> <span class="title function_">Dog</span><span class="params">(name)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">super</span>(name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>继承中的重写问题</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//父类中有一个方法，子类方法的方法名相同，参数列表也相同，只是内容不同，又叫方法覆盖</span></span><br><span class="line"><span class="comment">//如果方法名相同但是参数列表不同，那就是方法重载</span></span><br><span class="line"><span class="comment">//重写的时候如果还是需要父类一部分已经写好的方法，也可以用super</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Role</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">print</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;姓名：&quot;</span>+<span class="built_in">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Magicer</span> <span class="keyword">extends</span> <span class="title class_">Role</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> level;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">print</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="built_in">super</span>.print();<span class="comment">//调用父类方法</span></span><br><span class="line">        System.out.println(<span class="string">&quot;等级：&quot;</span>+<span class="built_in">this</span>.level)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//父类还可以起到规范方法名的作用</span></span><br></pre></td></tr></table></figure></li>
+<li><p>多态</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//因为方法重载需要写很多次，所以用父类来作为接收的东西</span></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">attack</span><span class="params">(Role r)</span>&#123;<span class="comment">//子类方法用父类来接收就可以接收所有子类，不用子类一个个重载</span></span><br><span class="line">    System.out.println(<span class="string">&quot;人物等级：&quot;</span>+<span class="built_in">this</span>.level)</span><br><span class="line">    <span class="keyword">return</span> hurt;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">Role</span> <span class="variable">role</span> <span class="operator">=</span><span class="keyword">new</span> <span class="title class_">Magicer</span>();<span class="comment">//把role称为上转型变量，可以访问从父类继承的属性和方法，但不能访问子类的；如果父类属性和方法被重写了，则只能访问子类重写的；可以转化为子类对象</span></span><br><span class="line"><span class="type">Magicer</span> <span class="variable">magicer</span> <span class="operator">=</span>(Magicer) role;<span class="comment">//强制转换类型</span></span><br><span class="line"><span class="comment">//上转型变量除了能用于接收参数以外，也能用来接收对象数组</span></span><br><span class="line">Animal[] animal=<span class="keyword">new</span> <span class="title class_">Animal</span>[<span class="number">10</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;animal.length;i++)&#123;</span><br><span class="line">    Random r=<span class="keyword">new</span> <span class="title class_">Random</span>();</span><br><span class="line">    <span class="keyword">switch</span>(r.nextInt(<span class="number">4</span>)+<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>:animal[i]=<span class="keyword">new</span> <span class="title class_">Cat</span>();<span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">2</span>:animal[i]=<span class="keyword">new</span> <span class="title class_">Dog</span>();<span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">3</span>:animal[i]=<span class="keyword">new</span> <span class="title class_">Cow</span>();<span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">4</span>:animal[i]=<span class="keyword">new</span> <span class="title class_">Sheep</span>();<span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=animal.length;i++)</span><br><span class="line">&#123;</span><br><span class="line">    animal[i].speak();<span class="comment">//使用重写后的方法</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>包和访问控制符</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//新建一个package,就能在不同package里面创建同名的类</span></span><br><span class="line"><span class="comment">//public 不同包以及本包都能访问，通过导包 import 包名.类名，只有不同包才要导入</span></span><br><span class="line"><span class="comment">//如果不加public 或者说不加访问控制符，那它就是默认的default，只能在本包里访问</span></span><br><span class="line"><span class="comment">//对于类来说，只能有public 和 default两种访问控制符</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//对于属性和方法来说有四种访问控制符</span></span><br><span class="line"><span class="comment">//private 本类内部</span></span><br><span class="line"><span class="comment">//default 本类中，本包中</span></span><br><span class="line"><span class="comment">//protected 本类中，同一个包中，不同包中的子类里面（父类在不同包里面的继承）</span></span><br><span class="line"><span class="comment">//public 都可以</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>面向对象三大特征<br>  封装、继承、多态</p>
+</li>
+<li><p>抽象类<br>  如果一个类中有抽象方法，那么类就要定义为抽象类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在class前面加上abstract</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">Animal</span>&#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="keyword">abstract</span> <span class="title function_">sing</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//子类必须重写抽象方法，override</span></span><br><span class="line"><span class="comment">//用于子类命名规范并且符合实际</span></span><br><span class="line"><span class="comment">//抽象类不能new对象，实例化</span></span><br><span class="line"><span class="comment">//重写后的访问控制符的访问不能比重写前的小</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//虽然抽象类可以让子类方法能够统一命名，但是有些方法不是所有子类都有的，不能直接用抽象类，比如不是所有动物都能抓老鼠，这时候就要用接口</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//新建一个接口类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">CatchMouth</span>()&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">catchMouth</span><span class="params">()</span>;<span class="comment">//默认是抽象的，公共的，所以public也可以省去</span></span><br><span class="line">    <span class="type">int</span> a=<span class="number">1</span>;<span class="comment">//默认是public static final 不可修改的全局变量</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//让相应的对象实现接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Cat</span> <span class="keyword">extends</span> <span class="title class_">Animal</span> <span class="keyword">implements</span> <span class="title class_">CatchMouth</span>&#123;<span class="comment">//这下必须重写（方法名相同，参数列表相同）</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//接口类实现多态效果</span></span><br><span class="line">CatchMouth c=<span class="keyword">new</span> <span class="title class_">Cat</span>();</span><br><span class="line">CatchMouth d=<span class="keyword">new</span> <span class="title class_">Dog</span>();</span><br><span class="line">c.catchMouth();</span><br><span class="line">d.catchMouth();<span class="comment">//接口引用可以指向实现类对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//接口也可以作为参数实现多态</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span>&#123;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">Catch</span><span class="params">(CatchMouth c)</span>&#123;</span><br><span class="line">        c.catchMouth;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Person p=<span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line">p.Catch(<span class="keyword">new</span> <span class="title class_">Cat</span>());</span><br><span class="line">p.Catch(<span class="keyword">new</span> <span class="title class_">Dog</span>());</span><br><span class="line"><span class="comment">//接口可以实现多继承的问题</span></span><br><span class="line"><span class="comment">//一个类可以实现多个接口，用逗号隔开</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>final 关键字</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="type">int</span> a=<span class="number">3</span>;<span class="comment">//该变量值不能修改</span></span><br><span class="line"><span class="keyword">final</span> <span class="keyword">void</span> <span class="title function_">test</span><span class="params">()</span>&#123;<span class="comment">//子类不能重写该方法（方法名相同参数列表相同）</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">final</span> <span class="keyword">public</span> A&#123;<span class="comment">//final修饰类，则该类不能被继承</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+        </div>
+        <div class="top-div">
+          
+        </div>
+      </div>
+    </div>
+
+    
+      <div class="next-post">
+        <a class="purple-link" href="/2023/09/09/%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%B1%BB/%E8%8B%B1%E8%AF%AD%E5%A5%BD%E8%AF%8D%E5%A5%BD%E8%AF%8D%E7%BB%84%E5%A5%BD%E5%8F%A5/">
+          <h3 class="post-title">
+            下一篇：英语好词好词组好句
+          </h3>
+        </a>
+      </div>
+    
+  </div>
+
+
+
+
+
+
+
+
+
+
+<footer>
+<div class="site-footer">
+  <div class="social-container">
+    
+      
+        <a aria-label="跳转至github" href="https://github.com/f-dong" target="_blank">
+          <i class="icon icon-github"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> <a href="https://github.com/f-dong/hexo-theme-minimalism" target="_blank">Theme</a>
+  
+  
+  
+  
+  
+  
+</div>
+</footer>
+
+
+      </div>
+    </div>
+    
+<script id="hexo-configurations"> window.theme_config = {"image":{"lazyload_enable":true,"photo_zoom":"simple-lightbox"}}; window.is_post = true; </script>
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

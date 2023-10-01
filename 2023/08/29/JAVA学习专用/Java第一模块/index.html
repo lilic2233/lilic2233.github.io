@@ -134,8 +134,71 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[][] a=<span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">4</span>][<span class="number">3</span>];<span class="comment">//四行，三列</span></span><br><span class="line"><span class="type">int</span>[][] b=<span class="keyword">new</span> <span class="title class_">int</span>[][]=&#123;&#123;<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>&#125;,&#123;<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>&#125;.&#123;<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>&#125;&#125;;</span><br><span class="line"><span class="comment">//输出</span></span><br><span class="line">System.out.println(b[<span class="number">0</span>][<span class="number">0</span>]);</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=b.length;i++)<span class="comment">//先按行算</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;b[i].length;j++)</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.print(b[i][j]); </span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println();<span class="comment">//换个行</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//三角数组</span></span><br><span class="line"><span class="type">int</span>[][]a=<span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">3</span>][];</span><br><span class="line">a[<span class="number">0</span>]=<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">1</span>,<span class="number">2</span>&#125;;</span><br><span class="line">a[<span class="number">1</span>]=<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line">a[<span class="number">2</span>]=<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>函数</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</li>
 </ul>
+<pre><code class="java">//函数public static 返回类型 函数名（参数列表）
+public static int jiecheng(int n)//返回类型为int型，参数为形参，不返回就是void
+&#123;
+    int ji=1;
+    for(int i=n;i&gt;=1;i++)
+        ji=ji*i;
+    return ji; //如果有返回值那么就用return返回，否则就不用写
+&#125;  
+//调用
+jiecheng(5);//实参
+//解决了代码重用的问题
+//如果一个函数里面有多个return语句，则遇到第一个就结束
+//如果有多个if语句，必须保证能遇到return，否则会报错（建议删掉几个if）
+public static swap(int a, int b)
+&#123;
+    int c=a;
+    a=b;
+    b=c;
+&#125;
+int a=3;
+int b=4;
+swap(a,b);
+//结果a和b的值不变
+//原因是函数里的a和b是形参，不会影响实参，只是把值给传进去了而已
+//基本数据类型都是传值调用，然而数组是传址调用，改变变量本身
+//对象名也是地址
+//函数里调用其他函数，完全没问题，不过调用的得包括被调用的参数，且被调用的写在上面
+//函数自己调用自己，即递归调用
+public static void login()&#123;
+String uname,pwd;
+Scanner scanner=new Scanner(System.in);
+System.out.println(&quot;请输入用户名：&quot;);
+uname =scanner.nextLine();
+System.out.println(&quot;请输入密码：&quot;);
+pwd =scanner.nextLine();
+if(uname.equals(&quot;admin&quot;)&amp;&amp;pwd.equals(&quot;666&quot;))
+    System.out.println(&quot;登录成功&quot;);
+else&#123;
+    System.out.println(&quot;用户名或密码出错&quot;);
+    login();
+&#125;
+    
+&#125;
+//阶乘
+public static int jiecheng(int n)
+&#123;
+
+    if(n&gt;1)
+        return n*jiecheng(n-1);
+    else 
+        return 1;
+&#125;
+//数组比大小
+public static double max(double []scores)
+&#123;
+    double m=scores[0];
+    for(int i=1;i&lt;scores.length;i++)
+    &#123;
+        m=m&gt;scores[i]?m:scores[i];
+    &#125;
+    return m;
+&#125;
+</code></pre>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
         </div>
         <div class="top-div">
